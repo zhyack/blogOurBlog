@@ -1,0 +1,5 @@
+*.pyc
+cache/*
+filebase/*
+postbase/*
+*db.sqlite3
