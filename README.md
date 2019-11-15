@@ -1,4 +1,4 @@
-#blogOurBlog
+# blogOurBlog
 
 ## How It Start & What You Can Expect
 
@@ -9,7 +9,7 @@
 * I want to get rid of ads.
 * I want to ...
 
-I want to have so many features, so I build my own website. And I also want to share it with anyone interested and improve it. Try the [current version](http://zhyack.cn). If you do like static pages, my [previous blog](https://zhyack.github.io/posts/2015_11_23_How-To-Build-Your-Blog-On-Github-Pages.html) solution may be a good option.
+I want to have so many features, so I build my own website. And I also want to share it with anyone interested and improve it. Try the [current version](http://zhyack.cn). A [demo](http://zhyack.cn:9000) whose codes are completely the same as this repo. If you do like static pages, my [previous blog](https://zhyack.github.io/posts/2015_11_23_How-To-Build-Your-Blog-On-Github-Pages.html) solution may be a good option.
 
 ## The Reality
 
@@ -24,17 +24,18 @@ I want to have so many features, so I build my own website. And I also want to s
     * Post list in the side bar.
 
 ## TODO:
-* A tutorial and summary of the past works.
+* A tutorial and summary of the previous works.
 * New Blog model to host blogs.
     * Alternative styles.
     * Self-organized page lists.
 * Better editor.
+* New Comment model.
 * Faster, faster, faster.
 * Interactive games between users.
 
 Let's just do it.
 
-# Get Start
+# Getting Start
 
 ## The Environment
 
