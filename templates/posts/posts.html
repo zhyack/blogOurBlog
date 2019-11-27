@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ post_title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'posts/css/stylesheet.css' %} " />
+        <link rel="stylesheet" href="{% static 'editor/css/editormd.preview.css' %}" />
+        <link rel="shortcut icon" href="{% static 'main/images/siteicon.ico' %}">
+        <link rel="bookmark" href="{% static 'main/images/siteicon.ico' %}">
+        <style>
+            .editormd-html-preview {
+                width: 61.8%;
+                margin: 0 auto;
+            }
+            body {
+              opacity:1.0;
+            }
+        </style>
+        {{ extra_styles | safe }}
+    </head>
+    <body>
+        {% if use_md%}
+        <div id="layout">
+            <div id="test-editormd-view" style="display:none">
+               <textarea name="test-editormd-markdown-doc">{{ post_content | safe}}
+               </textarea>
+            </div>
+
+        </div>
+        
+        <script src="{% static 'main/js/jquery.js' %} "></script>
+        <script src="{% static 'editor/lib/marked.min.js' %}"></script>
+        <script src="{% static 'editor/lib/prettify.min.js' %}"></script>
+
+        <script src="{% static 'editor/lib/raphael.min.js' %}"></script>
+        <script src="{% static 'editor/lib/underscore.min.js' %}"></script>
+        <script src="{% static 'editor/lib/sequence-diagram.min.js' %}"></script>
+        <script src="{% static 'editor/lib/flowchart.min.js' %}"></script>
+        <script src="{% static 'editor/lib/jquery.flowchart.min.js' %}"></script>
+
+        <script src="{% static 'editor/editormd.js' %}"></script>
+        <script type="text/javascript">
+            $(function() {
+                var testEditormdView1;
+                testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                        // htmlDecode      : true,
+                        htmlDecode      : "style,script",
+                        atLink    : false,
+                        emailLink : false, 
+                        //toc             : false,
+                        tocm            : true,
+                        //tocContainer    : "#custom-toc-container",
+                        //gfm             : false,
+                        //tocDropdown     : true,
+                        // markdownSourceCode : true,
+                        emoji           : true,
+                        taskList        : true,
+                        tex             : true,  // 默认不解析
+                        flowChart       : true,  // 默认不解析
+                        sequenceDiagram : true,  // 默认不解析
+                    });
+
+            });
+        </script>
+        {% endif %}
+        
+
+        {{ additional_scripts | safe }}
+
+        {% if discuss_allowed%}
+            <div id="disqus_thread" style="width:61.8%;margin:0px auto"></div>
+        
+        <script>
+            
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhys-site.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <script id="dsq-count-scr" src="//zhys-site.disqus.com/count.js" async></script>
+        {% endif %}
+        <script> $(document).ready(function(){$('#test-editormd-view').delay(0).show();}); </script>
+    </body>
+</html>

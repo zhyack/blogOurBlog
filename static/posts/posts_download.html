@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{post_title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://zhyack.cn/static/posts/css/stylesheet.css" />
+        <link rel="stylesheet" href="http://zhyack.cn/static/editor/css/editormd.preview.css" />
+        <link rel="shortcut icon" href=" http://zhyack.cn/static/main/images/favicon.ico"/>
+        <link rel="bookmark" href="http://zhyack.cn/static/main/images/favicon.ico"/>
+        <style>
+            .editormd-html-preview {
+                width: 61.8%;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="layout">
+            <div id="test-editormd-view">
+               <textarea name="test-editormd-markdown-doc">{{post_content}}
+               </textarea>
+            </div>
+
+        </div>
+        <script src="http://zhyack.cn/static/main/js/jquery.js"></script>
+        <script src="http://zhyack.cn/static/editor/lib/marked.min.js"></script>
+        <script src="http://zhyack.cn/static/editor/lib/prettify.min.js"></script>
+
+        <script src="http://zhyack.cn/static/editor/lib/raphael.min.js"></script>
+        <script src="http://zhyack.cn/static/editor/lib/underscore.min.js"></script>
+        <script src="http://zhyack.cn/static/editor/lib/sequence-diagram.min.js"></script>
+        <script src="http://zhyack.cn/static/editor/lib/flowchart.min.js"></script>
+        <script src="http://zhyack.cn/static/editor/lib/jquery.flowchart.min.js"></script>
+
+        <script src="http://zhyack.cn/static/editor/editormd.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var testEditormdView1;
+                testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                        //htmlDecode      : true,
+                        htmlDecode      : "style,script,iframe",
+                        //toc             : false,
+                        tocm            : true,
+                        //tocContainer    : "#custom-toc-container",
+                        //gfm             : false,
+                        //tocDropdown     : true,
+                        // markdownSourceCode : true,
+                        emoji           : true,
+                        taskList        : true,
+                        tex             : true,  // 默认不解析
+                        flowChart       : true,  // 默认不解析
+                        sequenceDiagram : true,  // 默认不解析
+                    });
+
+            });
+        </script>
+    </body>
+</html>

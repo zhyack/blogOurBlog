@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ post_title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'posts/css/stylesheet.css' %} " />
+        <link rel="stylesheet" href="{% static 'editor/css/editormd.preview.css' %}" />
+        <link rel="shortcut icon" href="{% static 'main/images/siteicon.ico' %}">
+        <link rel="bookmark" href="{% static 'main/images/siteicon.ico' %}">
+        <style>
+            .editormd-html-preview {
+                width: 61.8%;
+                margin: 0 auto;
+            }
+            body {
+              opacity:1.0;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="{% static 'main/js/jquery.js' %} "></script>
+        <script src="{% static 'editor/lib/marked.min.js' %}"></script>
+        <script src="{% static 'editor/lib/prettify.min.js' %}"></script>
+
+        <script src="{% static 'editor/lib/raphael.min.js' %}"></script>
+        <script src="{% static 'editor/lib/underscore.min.js' %}"></script>
+        <script src="{% static 'editor/lib/sequence-diagram.min.js' %}"></script>
+        <script src="{% static 'editor/lib/flowchart.min.js' %}"></script>
+        <script src="{% static 'editor/lib/jquery.flowchart.min.js' %}"></script>
+
+        <script src="{% static 'editor/editormd.js' %}"></script>
+        <script type="text/javascript">
+            $(function() {
+                var testEditormdView1;
+                testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                        // htmlDecode      : true,
+                        htmlDecode      : "style,script",
+                        //toc             : false,
+                        tocm            : true,
+                        //tocContainer    : "#custom-toc-container",
+                        //gfm             : false,
+                        //tocDropdown     : true,
+                        // markdownSourceCode : true,
+                        emoji           : true,
+                        taskList        : true,
+                        tex             : true,  // 默认不解析
+                        flowChart       : true,  // 默认不解析
+                        sequenceDiagram : true,  // 默认不解析
+                    });
+
+            });
+        </script>
+        <form action="" method="POST" style="display:none" id="forward_form">
+            {% csrf_token %}
+            <textarea name="pass" id="pass_ele"> </textarea>
+        </form>
+        <script>
+            function StandardPost(url,pass){
+                var temp_form = document.getElementById("forward_form");
+                temp_form.action = url;
+                var opt = document.getElementById("pass_ele");
+                opt.value = pass;
+                temp_form.appendChild(opt);
+                temp_form.submit();
+            }
+            var r=prompt("{{ addtional_info }} 请输入文档所有者提供的验证信息：", "");
+            if (r){
+                StandardPost('{{ request_url | safe }}',r);
+            }
+        </script>
+
+    </body>
+</html>

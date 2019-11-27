@@ -1,0 +1,42 @@
+{
+    "caption": "常用链接",
+    "sub": [
+        {
+            "title": "新建/编辑笔记",
+            "shorttitle": "新建/更新笔记",
+            "action": "alterPage(\"/setpost/\")"
+        },
+        {
+            "title": "上传/修改文件",
+            "shorttitle": "上传/修改文件",
+            "action": "alterPage(\"/upfile/\")"
+        },
+        {
+            "title": "主页",
+            "shorttitle": "主页",
+            "action": "alterPage(\"/home/\")"
+        },
+        {
+            "title": "Fork me on GitHub",
+            "shorttitle": "GitHub",
+            "action": "window.open(\"https://github.com/zhyack/blogOurBlog\",\"_blank\");"
+        },
+        {
+            "title": "其他",
+            "shorttitle": "其他",
+            "sub": [
+                {
+                    "title": "DBLP",
+                    "shorttitle": "DBLP",
+                    "action": "alterPage(\"https://dblp.uni-trier.de/\")"
+                },
+                {
+                    "title": "管理员入口",
+                    "shorttitle": "管理员入口",
+                    "action": "alterPage(\"/admin/\")"
+                }
+            ]
+        }
+
+    ]
+}

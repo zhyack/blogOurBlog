@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{post_title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://{{ request.META.HTTP_HOST }}/static/posts/css/stylesheet.css" />
+        <link rel="stylesheet" href="http://{{ request.META.HTTP_HOST }}/static/editor/css/editormd.preview.css" />
+        <link rel="shortcut icon" href=" http://{{ request.META.HTTP_HOST }}/static/main/images/favicon.ico"/>
+        <link rel="bookmark" href="http://{{ request.META.HTTP_HOST }}/static/main/images/favicon.ico"/>
+        <style>
+            .editormd-html-preview {
+                width: 61.8%;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        {{post_content}}
+    </body>
+</html>

@@ -37,14 +37,20 @@ If you do like static pages, my [previous blog](https://zhyack.github.io/posts/2
 
 Let's just do it.
 
-# Getting Start
+# Getting Started
 
 ## The Environment
+
+These have been tested on ubuntu 14.04, 16.04, 18.04.
 
 1. Get Python3: [official install](https://www.python.org/downloads/), `apt-get install`, or [Anaconda](https://www.anaconda.com/distribution/#download-section)
 2. Install pip: [download](https://bootstrap.pypa.io/get-pip.py) and `python3 get-pip.py`
 3. Install django: `pip3 install django==2.0.2`
-4. Use Apache2 to deploy the site:
+4. Modify the config file `blogOurBlog/config.json`:
+    * Change the hosts according to your domain.
+    * A complicated `secret_key` is suggested to replace the original one.
+    * It's suggessted to turn close the debugging mode by set `show_debug_info` to `false`.
+5. Use Apache2 to deploy the site:
     * `apt-get install apache2 apache2-dev python3-dev libapache2-mod-wsgi-py3`
     * Add this to the end of `/etc/apache2/envvars`
     ```
@@ -53,28 +59,32 @@ Let's just do it.
     ```
     * Add this to the begining of `/etc/apache2/apache2.conf`
     ```
-        Alias /static/ path-to-your-site/static/
-        <Directory path-to-your-site/static>
+        Alias /static/ path-to-blogOurBlog/static/
+        <Directory path-to-blogOurBlog/static>
         Require all granted
         </Directory>
-        WSGIScriptAlias / path-to-your-site/mysite/mysite/wsgi.py
-        WSGIPythonPath path-to-your-site/mysite/
-        <Directory path-to-your-site/mysite/mysite/>
+        WSGIScriptAlias / path-to-blogOurBlog/mysite/mysite/wsgi.py
+        WSGIPythonPath path-to-blogOurBlog/mysite/
+        <Directory path-to-blogOurBlog/mysite/mysite/>
         <Files wsgi.py>
         Require all granted
         </Files>
         </Directory>
     ```
-    * `chmod -R 777 path-to-your-site/`
+    * `chmod -R 777 path-to-blogOurBlog/`
     * `service apache2 restart`
-5. Or just expose the site on port 80 (or any other port):
+6. Or just expose the site on port 80 (or any other port):
 ```
     $ screen
-    $ cd path-to-your-site/mysite/ 
+    $ cd path-to-blogOurBlog/mysite/ 
     $ python3 manage.py runserver 80
 ```
+7. Use the browser to test whether you launched the site.
+8. The original admin account is :
+    * username: creator
+    * password: blogOurBlog
+    * It's the only account that can access the admin panel. **Remember to change the password.**
 
-6. Use the browser to test whether you launched the site.
 
 ## What Are The Files For
 

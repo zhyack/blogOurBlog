@@ -1,0 +1,10 @@
+{
+    "hosts": [
+        "zhyack.cn",
+        "*.zhyack.cn"
+    ],
+    "index_title": "blogOurBlog",
+    "secret_key": "tpegey53)+-817alfam_v3gv+^l!%h_w*i#yc1+e3jhbz5ns-&",
+    "show_debug_info": true,
+    "owner_id": "creator"
+}

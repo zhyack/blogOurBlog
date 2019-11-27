@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <meta charset='utf-8'>
+      <meta http-equiv="X-UA-Compatible" content="chrome=1">
+      <link rel="shortcut icon" href="{% static 'main/images/siteicon.ico' %}">
+      <link rel="bookmark" href="{% static 'main/images/siteicon.ico' %}">
+
+      <script src="{% static 'editor/js/modernizr.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'editor/css/editormd.min.css' %}">
+      <title>{{post_title}}</title>
+      <style>
+      .errorlist {
+          color: red;
+      }
+      </style>
+    </head>
+
+  <body>
+    {% if user.is_authenticated %}
+    <form id="up_form" style="display:none">
+        {% csrf_token %}
+        <p>
+            <input id="id_powner" name="powner" type="text" value="{{ post_owner }}" />
+        </p>
+        <p>
+            <input id="id_pname" name="pname" type="text" value="{{ post_title }}" />
+        </p>
+        <p>
+            <input id="id_pviewers" name="pviewers" type="text" value="{{ post_viewers }}" />
+        </p>
+        <p>
+            <input id="id_peditors" name="peditors" type="text" value="{{ post_editors }}" />
+        </p>
+        <p>
+            <input id="id_ptags" name="ptags" type="text" value="{{ post_tags }}" />
+        </p>
+        <p>
+            <input id="id_pfeature" name="pfeature" type="text" value="{{ post_feature }}" />
+        </p>
+        <p>
+                <input id="id_pass" name="ppass" type="password" value="{{ post_pass }}" />
+        </p>
+        <p>
+                <input id="id_prank" name="prank" type="text" value="{{ post_rank }}" />
+        </p>
+        <p>
+                <input id="id_ptrace" name="ptrace" type="text" value="{{ post_trace }}" />
+        </p>
+        <p>
+            <textarea id="id_pcontent" name="pcontent" type="text" value=""/>{{ post_content | safe }}</textarea>
+            <textarea id="id_pcache" name="pcache" type="text" value=""/>{{ post_cache | safe }}</textarea>
+        </p>
+        <p class="keeplogin">
+            <input type="checkbox" name="poverlap" id="id_poverlap" checked="checked"/>
+        </p>
+    </form>
+    <div id="content-wrapper">
+        <div id="editormd">
+        </div>
+    </div>
+    {% else %}
+    <p>Please <a href="{% url 'login' %}" target="_top">login</a></p>
+    {% endif %}
+    <script src="{% static 'editor/js/jquery.js' %}"></script>
+    <script src="{% static 'editor/editormd.js' %}"></script>
+    <script src="{% static 'editor/js/editor.js' %}"></script>
+  </body>
+</html>
