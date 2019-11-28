@@ -49,8 +49,8 @@ These have been tested on ubuntu 14.04, 16.04, 18.04.
 4. Modify the config file `blogOurBlog/config.json`:
     * Change the hosts according to your domain.
     * A complicated `secret_key` is suggested to replace the original one.
-    * It's suggessted to turn close the debugging mode by set `show_debug_info` to `false`.
-5. Use Apache2 to deploy the site:
+    * It's suggessted to turn off the debugging mode by set `show_debug_info` to `false`.
+5. We suggest the next option to deploy the site. But if you insist to use Apache2:
     * `apt-get install apache2 apache2-dev python3-dev libapache2-mod-wsgi-py3`
     * Add this to the end of `/etc/apache2/envvars`
     ```
@@ -63,9 +63,9 @@ These have been tested on ubuntu 14.04, 16.04, 18.04.
         <Directory path-to-blogOurBlog/static>
         Require all granted
         </Directory>
-        WSGIScriptAlias / path-to-blogOurBlog/mysite/mysite/wsgi.py
-        WSGIPythonPath path-to-blogOurBlog/mysite/
-        <Directory path-to-blogOurBlog/mysite/mysite/>
+        WSGIScriptAlias / path-to-blogOurBlog/src/core/wsgi.py
+        WSGIPythonPath path-to-blogOurBlog/src/
+        <Directory path-to-blogOurBlog/src/core/>
         <Files wsgi.py>
         Require all granted
         </Files>
@@ -73,12 +73,12 @@ These have been tested on ubuntu 14.04, 16.04, 18.04.
     ```
     * `chmod -R 777 path-to-blogOurBlog/`
     * `service apache2 restart`
-6. Or just expose the site on port 80 (or any other port):
+6. An easier way to deploy the site. if you use ubuntu, we suggest you open a new `screen` to do these. Now, expose the site on port 80 (or any other port):
 ```
-    $ screen
-    $ cd path-to-blogOurBlog/mysite/ 
+    $ cd path-to-blogOurBlog/src/ 
     $ python3 manage.py runserver 80
 ```
+
 7. Use the browser to test whether you launched the site.
 8. The original admin account is :
     * username: creator
