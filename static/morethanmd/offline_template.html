@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+<title>{{post_title}}</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="http://zhyack.cn:9000/static/morethanmd/css/morethanmd.css">
+<script src="http://zhyack.cn:9000/static/morethanmd/js/emojify.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="http://zhyack.cn:9000/static/morethanmd/fonts/fonts.css" rel="stylesheet">
+<link rel=stylesheet href="http://zhyack.cn:9000/static/morethanmd/materialize/materialize.css">
+<link rel=stylesheet href="http://zhyack.cn:9000/static/morethanmd/css/markdown.css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="http://zhyack.cn:9000/static/morethanmd/toolbar/prettify.js"></script>
+<script src="http://zhyack.cn:9000/static/morethanmd/js/marked.js"></script>
+<script src="http://zhyack.cn:9000/static/morethanmd/materialize/materialize.js"></script>
+<script type="text/javascript"   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<link rel="stylesheet" href="http://zhyack.cn:9000/static/morethanmd/highlight/styles/default.css">
+<script src="http://zhyack.cn:9000/static/morethanmd/highlight/highlight.pack.js"></script>
+<script src="http://zhyack.cn:9000/static/morethanmd/js/jquery.timer.js"></script>
+<script src="http://zhyack.cn:9000/static/morethanmd/js/polifill.js"></script>
+
+<script src="http://zhyack.cn:9000/static/morethanmd/js/config.js"></script>
+<script src="http://zhyack.cn:9000/static/morethanmd/js/adv-markdown.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+</head>
+<body>
+<div style="width: 61.8%; margin: 0 auto;">
+{{post_content}}
+</div>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ["\\[","\\]"]],}
+    });
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    emojify.setConfig({
+        img_dir: 'https://www.webfx.com/tools/emoji-cheat-sheet/graphics/emojis/',  // Directory for emoji images
+    });
+    emojify.run();
+    M.AutoInit();
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
+    const observer = lozad();
+    observer.observe();
+</script>
+
+
+</body>

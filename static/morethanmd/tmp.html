@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+<title>Grad</title>
+<meta charset="utf-8"/>
+<!-- <link rel="shortcut icon" href="{% static 'main/images/siteicon.ico' %}">
+<link rel="bookmark" href="{% static 'main/images/siteicon.ico' %}"> -->
+
+<link rel=stylesheet href="toolbar/jquery.toolbar.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel=stylesheet href="materialize/materialize.css">
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script src="toolbar/jquery.toolbar.js"></script>
+<script src="toolbar/prettify.js"></script>
+
+<script src="materialize/materialize.js"></script>
+
+<script src="js/jquery.timer.js"></script>
+<script src="js/polifill.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+<style>.main {
+    padding-left: 300px;
+  }
+</style>
+
+</head>
+<body>
+
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li><div class="user-view">
+            <div class="background">
+            <img src="https://cdn.pixabay.com/photo/2015/07/10/17/27/sparkler-839831_960_720.jpg">
+            
+            </div>
+            <div style="margin:10px 0px 5px 0px;"><a href="#user"><img class="circle" src="https://cdn.pixabay.com/photo/2019/11/13/12/35/anise-4623554_960_720.png"></a></div>
+            <div><a class="btn-flat"><span class="white-text"><i class="material-icons">person</i></span></a>
+            <a class="waves-effect waves-light btn-flat"><span class="white-text">修改密码</span></a>
+            <a class="waves-effect waves-light btn-flat"><span class="white-text">退出登录</span></a></div>
+            <div><a class="btn-flat"><span class="white-text"><i class="material-icons">low_priority</i></span></a>
+            <a class="waves-effect waves-light btn-flat"><span class="white-text">按时间</span></a>
+            <a class="waves-effect waves-light btn-flat"><span class="white-text">按标签</span></a></div>
+            <div><a class="btn-flat"><span class="white-text"><i class="material-icons">widgets</i></span></a>
+            <a class="waves-effect waves-light btn-flat"><span class="white-text">创建笔记</span></a>
+            <a class="waves-effect waves-light btn-flat"><span class="white-text">上传文件</span></a></div>
+        </div>
+        </li>
+        <li><nav  style="background-color:#557aa2">
+            <div class="nav-wrapper">
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader"><i class="material-icons">fast_rewind</i>.../home/</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>对于现有开放领域对话系统生成回复相关性的改进</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>多语言词汇表示学习研究<sid hidden>121</sid></a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>基于句子篡改的神经机器翻译方法研究</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">folder</i>next folder</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>对于现有开放领域对话系统生成回复相关性的改进</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>多语言词汇表示学习研究</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>基于句子篡改的神经机器翻译方法研究</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">folder</i>next folder</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>对于现有开放领域对话系统生成回复相关性的改进</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>多语言词汇表示学习研究</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">library_books</i>基于句子篡改的神经机器翻译方法研究</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">wallpaper</i>一个图片.png</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">movie_filter</i>一个视频.mp4</a></li>
+    </ul>
+   <div class="main"> 
+        <nav class="blue"> &nbsp;&nbsp;
+            <a href="#!" class="breadcrumb">Home</a>
+            <a href="#!" class="breadcrumb">First</a>
+            <a href="#!" class="breadcrumb">Second</a>
+            <a href="#!" class="breadcrumb">Third</a>
+        </nav> 
+        <div class="row blue white-text valign-wrapper" style="margin:0px;"> 
+            <div class="col s10"><strong style="font-size: 28px;">这是一个文章标题</strong> by <strong style="font-size: 18px;">zhy</strong> <strong style="font-size: 10px;"> @2020/02/18 13:00:00</strong></div>
+            <div class="col s2" style="text-align: right;">
+                <i class="material-icons waves-effect">zoom_out_map</i> &nbsp;&nbsp;
+                <i class="material-icons waves-effect">build</i> &nbsp;&nbsp;
+                <i class="material-icons waves-effect">delete</i> &nbsp;&nbsp;
+                <i class="material-icons waves-effect">share</i>
+            </div>
+        </div>
+        
+                    <iframe style="width:100%;margin:0 auto;overflow-y: auto;height:10000px;max-height: calc(100vh - 120px); min-height: 100%;box-sizing: border-box;" src="debug.html" frameborder="0"></iframe>
+    </div>
+<script>$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });</script>
+
+</body>
